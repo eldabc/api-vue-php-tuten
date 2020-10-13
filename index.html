@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Client Vue</title>
+	</head>
+	<body>
+		<div id='vueapp'>
+			<div>
+				<p>
+					Time: <input v-model="hour" />
+				</p>
+				<p>
+					UTC: <input v-model="utc" />
+				</p>
+				<p>
+					<button v-on:click="enviar">Send</button>
+				</p>
+			</div>
+
+			<h2>List Times</h2>
+			<div>
+				<div v-for="r in regs">
+					<div>{{ r.message }}</div>
+					<div>{{ r.hour }} - {{ r.utc }}</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Import Vue.js-->
+		<script src="https://unpkg.com/vue"></script>
+		<script src="https://unpkg.com/vue-resource"></script>
+
+		<!-- Import app -->
+		<script src="./app.js"></script>
+	</body>
+</html>
